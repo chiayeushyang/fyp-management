@@ -10,6 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
+import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 import com.skydoves.balloon.showAlignTop
 
 
@@ -36,6 +37,13 @@ class GiveMarkAndApprove : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Laporan proposal (P01, C4(analisis)) : 5%  pengetahuan\n" +
                     "\n" +
                     "Perlu mempunyai elemen berikut:\n" +

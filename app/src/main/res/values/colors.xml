@@ -22,4 +22,5 @@
     <color name="pending_yellow">#F7ED95</color>
     <color name="rejected_red">#F5AEAE</color>
     <color name="tooltip_bg">#FFB45A</color>
+    <color name="balloon_overlay">#C3000000</color>
 </resources>

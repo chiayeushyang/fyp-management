@@ -10,6 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
+import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 import com.skydoves.balloon.showAlignTop
 
 // TODO: Rename parameter arguments, choose names that match
@@ -63,6 +64,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Abstrak (P01)\n" +
                     "0\n" +
                     "Abstrak tiada dalam tesis.\n" +
@@ -91,6 +99,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Pendahuluan (P01)\n" +
                     "0\n" +
                     "Pendahuluan tiada dalam tesis.\n" +
@@ -120,6 +135,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Kajian Literatur (P07)(LL)\n" +
                     "0\n" +
                     "Kajian literatur tiada dalam tesis.\n" +
@@ -151,6 +173,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Metodologi\n" +
                     "0\n" +
                     "Metodologi tiada dalam tesis.\n" +
@@ -171,7 +200,7 @@ class ThesisApproveAndMark : Fragment() {
         }
 
         button4.setOnClickListener{
-            button.showAlignTop(balloon4)
+            button4.showAlignTop(balloon4)
         }
 
         val balloon5 = createBalloon(requireContext()) {
@@ -182,6 +211,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Reka bentuk Sistem\n" +
                     "0\n" +
                     "Reka bentuk sistem tiada dalam tesis.\n" +
@@ -213,6 +249,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Perlaksanaan\n" +
                     "0\n" +
                     "Perlaksanaan tiada dalam tesis.\n" +
@@ -244,6 +287,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Perbincangan\n" +
                     "0\n" +
                     "Perbincangan tiada dalam tesis.\n" +
@@ -275,6 +325,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Kesimpulan dan Cadangan (P01)\n" +
                     "0\n" +
                     "Kesimpulan dan cadangan tiada dalam tesis.\n" +
@@ -302,6 +359,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Rujukan (P01)\n" +
                     "0\n" +
                     "Tiada rujukan dalam tesis.\n" +
@@ -327,6 +391,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Sitasi Penulisan (P06)(EM)\n" +
                     "0\n" +
                     "Semua kandungan tesis yang merangkumi penggunaan teks, gambar rajah, jadual ataupun lain-lain elemen disalin daripada sumber sedia ada.\n" +
@@ -354,6 +425,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("1.\t\tRekabentuk Projek (CPS9-P4(mekanisme)) - 5%  psikomotor\t[__/5]")
             setTextColorResource(R.color.black)
             setBackgroundColorResource(R.color.tooltip_bg)
@@ -373,6 +451,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Konfigurasi persekitaran projek (CPS9-P5(respons ketara kompleks)) – 5%  psikomotor. Pelajar berupaya menunjukkan  kemahiran berikut:\n" +
                     "•\tmelaksanakan sebahagian langkah-langkah pembangunan atau implementasi projek\n" +
                     "•\tmengkonfigurasi atau memanipulasi persekitaran pembangunan dan pelaksanaan projek  \n")
@@ -394,6 +479,13 @@ class ThesisApproveAndMark : Fragment() {
             setCornerRadius(4f)
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
+            setPadding(10)
+            setIsVisibleOverlay(true)
+            setOverlayColorResource(R.color.balloon_overlay)
+            setOverlayPadding(6f)
+            setOverlayPaddingColorResource(R.color.colorPrimary)
+            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+            setDismissWhenOverlayClicked(false)
             setText("Pemilihan metodologi/teknik/perisian (CSP4-CTPS) CT1(kebolehan mengenalpasti dan menganalisis masalah dalam situasi kompleks dan kabur, serta membuat penilaian yang berjustifikasi) 5%   ")
             setTextColorResource(R.color.black)
             setBackgroundColorResource(R.color.tooltip_bg)

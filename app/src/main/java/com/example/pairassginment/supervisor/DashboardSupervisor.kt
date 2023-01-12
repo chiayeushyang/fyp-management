@@ -25,7 +25,7 @@ class DashboardSupervisor : AppCompatActivity() {
 
                 R.id.Home -> replaceFragment(Home())
                 R.id.Student -> replaceFragment(StudentList())
-                R.id.Assignment -> replaceFragment(ViewAndEditMark())
+                R.id.Assignment -> replaceFragment(GiveMarkAndApprove())
 
                 else -> {
 
