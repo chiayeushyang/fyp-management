@@ -1,60 +1,64 @@
 package com.example.pairassginment.supervisor
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pairassginment.R
+import com.example.pairassginment.supervisor.`object`.HomeItems
+import com.example.pairassginment.supervisor.`object`.Student
+import com.example.pairassginment.supervisor.recycleAdapter.StudentAdapter
+import com.example.pairassginment.supervisor.recycleAdapter.SupervisorAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [StudentList.newInstance] factory method to
- * create an instance of this fragment.
- */
-class StudentList : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class StudentList : Fragment(), StudentAdapter.OnItemClickListener {
+    private lateinit var itemsArray: ArrayList<Student>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_coordinate_student_list, container, false)
+        getItems()
+
+        view.findViewById<RecyclerView>(R.id.studentList_RV).layoutManager= LinearLayoutManager(context)
+        view.findViewById<RecyclerView>(R.id.studentList_RV).adapter= StudentAdapter(itemsArray, this)
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StudentList.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            StudentList().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onItemClick(position: Int) {
+        Toast.makeText(activity, itemsArray[position].studentName.toString(), Toast.LENGTH_SHORT).show()
+        replaceFragment(StudentWork())
+    }
+
+    fun getItems() {
+        itemsArray = ArrayList();
+        itemsArray.add(Student("Cham Zhao Siaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Siaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = parentFragmentManager
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.frame_layout, fragment)
+        fragmentTransaction?.commit()
     }
 }

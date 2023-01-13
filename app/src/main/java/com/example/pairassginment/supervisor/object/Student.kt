@@ -1,4 +1,8 @@
 package com.example.pairassginment.supervisor.`object`
 
-class Student {
-}
+data class Student (
+    var studentName: String?,
+    var studentPPT: String?,
+    var studentThesis: String?,
+    var studentProposal: String?
+)

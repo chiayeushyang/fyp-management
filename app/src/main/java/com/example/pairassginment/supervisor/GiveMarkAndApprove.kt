@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import com.example.pairassginment.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.skydoves.balloon.BalloonAnimation
@@ -27,7 +29,11 @@ class GiveMarkAndApprove : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_give_mark_and_approve, container, false)
+        val mark = view.findViewById<EditText>(R.id.mark_et)
         val button = view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        val button2 = view.findViewById<Button>(R.id.button2)
+        val button3 = view.findViewById<Button>(R.id.button3)
+        val button4 = view.findViewById<Button>(R.id.button4)
 
         val balloon = createBalloon(requireContext()) {
             setArrowSize(10)
@@ -62,26 +68,9 @@ class GiveMarkAndApprove : Fragment() {
         }
 
         button.setOnClickListener{
-            button.showAlignTop(balloon)
+            mark.showAlignTop(balloon)
         }
         // Inflate the layout for this fragment
         return view
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GiveMarkAndApprove.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GiveMarkAndApprove().apply {
-
-            }
     }
 }

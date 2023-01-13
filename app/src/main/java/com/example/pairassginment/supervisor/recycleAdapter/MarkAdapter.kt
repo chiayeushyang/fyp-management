@@ -3,17 +3,17 @@ package com.example.pairassginment.supervisor.recycleAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pairassginment.R
-import com.example.pairassginment.supervisor.`object`.HomeItems
+import com.example.pairassginment.supervisor.`object`.MarkClass
 
-class SupervisorAdapter(val items: ArrayList<HomeItems>, val listener: OnItemClickListener) :
+
+class MarkAdapter(val items: ArrayList<MarkClass>, val listener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.supervisor_dashboard_recycle_view_row, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.supervisor_mark_row, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -23,20 +23,20 @@ class SupervisorAdapter(val items: ArrayList<HomeItems>, val listener: OnItemCli
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ViewHolder) {
-            holder.itemImage.setImageResource(R.drawable.ic_baseline_check_24)
-            holder.itemTitle.setText(items[position].homeTitle)
+            holder.studName.setText(items[position].studentName)
+            holder.studMark.setText(items[position].studentMark)
         }
     }
 
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        var itemImage: ImageView
-        var itemTitle: TextView
+        var studName: TextView
+        var studMark: TextView
+
 
         init {
-            itemImage = itemView.findViewById(R.id.status_img)
-            itemTitle = itemView.findViewById(R.id.student_title_tv)
-
+            studName = itemView.findViewById(R.id.student_name_tv)
+            studMark = itemView.findViewById(R.id.student_mark)
             itemView.setOnClickListener(this)
         }
 
@@ -51,6 +51,4 @@ class SupervisorAdapter(val items: ArrayList<HomeItems>, val listener: OnItemCli
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
-
-
 }

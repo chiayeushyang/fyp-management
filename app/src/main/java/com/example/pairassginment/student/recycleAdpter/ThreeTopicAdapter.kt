@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pairassginment.R
-import com.example.pairassginment.databinding.CardLayoutBinding
 import android.content.Context
+import com.example.pairassginment.databinding.TopicsCardLayoutBinding
 import com.example.pairassginment.student.objectClass.ThreeTopicsItem
 
 class itemRecycleAdapter (val context: Context, val items: ArrayList<ThreeTopicsItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -22,9 +22,9 @@ class itemRecycleAdapter (val context: Context, val items: ArrayList<ThreeTopics
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val binding = CardLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = TopicsCardLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(LayoutInflater.from(context).inflate(
-            R.layout.card_layout,
+            R.layout.topics_card_layout,
             parent,
             false
         ), mListener, binding)
@@ -34,30 +34,30 @@ class itemRecycleAdapter (val context: Context, val items: ArrayList<ThreeTopics
 
         if(holder is ViewHolder){
             holder.itemImage.setImageResource(R.drawable.idea)
-            holder.itemTopic.text = (items[position].topicSubmitted)
-            holder.itemSubmittedDate.text = context.getString(R.string.submitted_date, items[position].dateSubmitted)
+            holder.itemTopic.text = (items[position].title)
+            holder.itemSubmittedDate.text = context.getString(R.string.submitted_date, items[position].date_submitted)
 
-            when (items[position].submittedStatus){
-                "Approved" ->
-                    {holder.itemApprovedRejectedDate.text = context.getString(R.string.approved_date, items[position].dateApproved)
-                        holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.approved_green))}
 
-                "Pending" ->
-                holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.pending_yellow))
+            when (items[position].status){
+                "APPROVED" -> {
+                    holder.itemApprovedRejectedDate.text = context.getString(R.string.approved_date, items[position].date_feedback)
+                    holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.approved_green))
+                }
 
-                else ->
-                {holder.itemApprovedRejectedDate.text = context.getString(R.string.rejected_date, items[position].dateReject)
-                    holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.rejected_red))}
+                "REJECTED" ->{
+                    holder.itemApprovedRejectedDate.text = context.getString(R.string.rejected_date, items[position].date_feedback)
+                    holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.rejected_red))
+                }
 
+                else ->holder.itemsBngColor.setCardBackgroundColor(context.getColor(R.color.pending_yellow))}
             }
         }
-    }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-     class ViewHolder(itemView: View, listener: onItemClickListner, binding: CardLayoutBinding): RecyclerView.ViewHolder(binding.root){
+     class ViewHolder(itemView: View, listener: onItemClickListner, binding: TopicsCardLayoutBinding): RecyclerView.ViewHolder(binding.root){
          val itemImage = binding.itemImage
          val itemTopic = binding.itemTopicSubmitted
          val itemSubmittedDate = binding.itemSubmittedDate

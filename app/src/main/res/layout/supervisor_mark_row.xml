@@ -24,32 +24,35 @@
             android:background="@color/orange_bng">
 
             <TextView
-                android:id="@+id/student_title_tv"
+                android:id="@+id/student_name_tv"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView"
+                android:text="Cham Zhao ...."
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/status_img"
+                app:layout_constraintEnd_toStartOf="@+id/student_mark"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/status_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/student_mark"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="10/60"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/student_name_tv"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_check_24"
-                app:tint="@color/white" />
+                app:layout_constraintTop_toTopOf="@+id/student_name_tv"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

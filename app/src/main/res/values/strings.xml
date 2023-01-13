@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">FINAL YEAR REPORT MANAGEMENT SYSTEM</string>
-    <string name="student_id_login">STUDENT ID</string>
-    <string name="student_password_login">PASSWORD</string>
+    <string name="email_login">EMAIL</string>
+    <string name="password_login">PASSWORD</string>
     <string name="sign_in">SIGN IN</string>
     <string name="link_contact_us">Forget password? Contact us</string>
     <string name="submitted_date">Submitted Date: %1$s</string>
     <string name="approved_date">Approved Date: %1$s</string>
     <string name="rejected_date">Rejected Date: %1$s</string>
     <string name="three_topics_title">Selected Title</string>
+    <string name="other_document_label_tv">other document label</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title">Title</string>
     <string name="proposal">Proposal(5m)</string>
     <string name="approve">Approve</string>
@@ -28,6 +32,4 @@
     <string name="mark11">Rekabentuk (5m)</string>
     <string name="mark12">Konfigurasi persekitaran (5m)</string>
     <string name="mark13">Pemilihan methodologi/teknik/perisian (5m)</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

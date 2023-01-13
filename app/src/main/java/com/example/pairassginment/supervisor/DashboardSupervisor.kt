@@ -5,8 +5,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.pairassginment.R
 import com.example.pairassginment.databinding.ActivityDashboardSupervisorBinding
-import com.example.pairassginment.databinding.ActivityMainBinding
-import com.example.pairassginment.databinding.FragmentViewAndEditMarkBinding
 
 class DashboardSupervisor : AppCompatActivity() {
 
@@ -25,7 +23,7 @@ class DashboardSupervisor : AppCompatActivity() {
 
                 R.id.Home -> replaceFragment(Home())
                 R.id.Student -> replaceFragment(StudentList())
-                R.id.Assignment -> replaceFragment(GiveMarkAndApprove())
+                R.id.Assignment -> replaceFragment(MarkList())
 
                 else -> {
 

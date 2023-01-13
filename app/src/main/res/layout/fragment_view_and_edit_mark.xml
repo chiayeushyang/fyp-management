@@ -11,9 +11,6 @@
         android:layout_height="match_parent"
         tools:context=".supervisor.ViewAndEditMark">
 
-        <!-- TODO: Update blank fragment layout -->
-
-
         <EditText
             android:id="@+id/mark_et"
             android:layout_width="137dp"
@@ -638,6 +635,20 @@
             app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
             app:layout_constraintStart_toStartOf="@+id/floatingActionButton"
             app:layout_constraintTop_toBottomOf="@+id/mark_title_tv13" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/approved_green"
+            android:text="@string/save"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mark_et13" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
