@@ -58,8 +58,10 @@ class ViewAllMark : AppCompatActivity() {
             .document(studentData!!.mark_id!!)
             .update("Status", status)
             .addOnSuccessListener {
-                val intentApprove = Intent(this, StudentList::class.java)
-                setResult(Activity.RESULT_OK, intentApprove)
+                val intentApprove = Intent(this, Dashboard::class.java)
+                intentApprove.putExtra("from_view", "mark")
+                intentApprove.putExtra("message", "Update Successfully")
+                startActivity(intentApprove)
                 finish()
             }
     }
