@@ -39,9 +39,9 @@ class StudentWork : Fragment(), StudWorkAdapter.OnItemClickListener {
         val type = itemsArray[position].itemImage.toString()
 
         when (type) {
-            "ppt" -> replaceFragment(pptApprove())
-            "txt" -> replaceFragment(GiveMarkAndApprove())
-            "thesis" -> replaceFragment(ThesisApproveAndMark())
+            "Proposal_PPT" -> replaceFragment(pptApprove())
+            "Proposal" -> replaceFragment(GiveMarkAndApprove())
+            "Final_Thesis" -> replaceFragment(ThesisApproveAndMark())
             else -> replaceFragment(TitleApprove())
         }
     }
@@ -49,12 +49,18 @@ class StudentWork : Fragment(), StudWorkAdapter.OnItemClickListener {
     fun getItems() {
         itemsArray = ArrayList();
 
-        itemsArray.add(StudWorkClass("Arduino of thesis", "thesis", "10/60", "2023-1-1", "2023-1-2"))
-        itemsArray.add(StudWorkClass("Arduino of ppt", "ppt", "10/60", "2023-1-1", "2023-1-2"))
-        itemsArray.add(StudWorkClass("Arduino of proposal", "txt", "10/60", "2023-1-1", "2023-1-2"))
-        itemsArray.add(StudWorkClass("Arduino of title1", "idea", "10/60", "2023-1-1", "2023-1-2"))
-        itemsArray.add(StudWorkClass("Arduino of title2", "idea", "10/60", "2023-1-1", "2023-1-2"))
-        itemsArray.add(StudWorkClass("Arduino of title3", "idea", "10/60", "2023-1-1", "2023-1-2"))
+        itemsArray.add(StudWorkClass("bhj", "Final_Thesis", "10/60", "2023-1-1", "2023-1-2", "PENDING"))
+        itemsArray.add(StudWorkClass("bhj", "Proposal_PPT", "10/60", "2023-1-1", "2023-1-2", "PENDING"))
+        itemsArray.add(StudWorkClass("bhj", "Proposal", "10/60", "2023-1-1", "2023-1-2", "APPROVED"))
+        itemsArray.add(StudWorkClass("bhj", "Poster", "10/60", "2023-1-1", "2023-1-2", "REJECTED"))
+        itemsArray.add(StudWorkClass("Title1", "Final_Thesis", "10/60", "2023-1-1", "2023-1-2","APPROVED"))
+        itemsArray.add(StudWorkClass("Title1", "Proposal_PPT", "10/60", "2023-1-1", "2023-1-2","PENDING"))
+        itemsArray.add(StudWorkClass("Title1", "Proposal", "10/60", "2023-1-1", "2023-1-2","APPROVED"))
+        itemsArray.add(StudWorkClass("Title1", "Poster", "10/60", "2023-1-1", "2023-1-2","PENDING"))
+        itemsArray.add(StudWorkClass("Title1", "idea", "0/0", "2023-1-3", "2023-1-4","APPROVED"))
+        itemsArray.add(StudWorkClass("bhjnnn", "idea", "0/0", "2023-1-2", "2023-1-5", "REJECTED"))
+//        itemsArray.add(StudWorkClass("bhj", "idea", "0/0", "2023-1-2", "2023-1-5","APPROVED"))
+        itemsArray.add(StudWorkClass("hjj", "idea", "0/0", "2023-1-1", "2023-1-6", "REJECTED"))
 
     }
 

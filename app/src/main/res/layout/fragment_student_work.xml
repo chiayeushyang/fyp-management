@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:padding="20dp"
-        android:text="Cham Zhao ..."
+        android:text="Cham Zhao Si"
         android:textColor="@color/little_white_black"
         android:textSize="@dimen/app_name_text_size"
         app:layout_constraintEnd_toEndOf="parent"

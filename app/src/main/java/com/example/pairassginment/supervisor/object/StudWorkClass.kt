@@ -5,5 +5,6 @@ data class StudWorkClass (
     var itemImage: String?,
     var itemMark: String?,
     var itemSubDate: String?,
-    var itemApproveRejectDate: String?
+    var itemApproveRejectDate: String?,
+    var status : String?
 )

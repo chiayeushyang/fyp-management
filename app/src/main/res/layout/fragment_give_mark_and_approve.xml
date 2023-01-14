@@ -16,7 +16,7 @@
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="54dp"
+            android:layout_width="50dp"
             android:layout_height="75dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/txt"
@@ -59,7 +59,7 @@
             android:text="Cham Zhao Si 2250160-BSE"
             android:textAlignment="center"
             android:textColor="@color/little_white_black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

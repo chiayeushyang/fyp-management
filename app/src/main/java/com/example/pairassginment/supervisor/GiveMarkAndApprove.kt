@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.pairassginment.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
@@ -17,7 +20,8 @@ import com.skydoves.balloon.showAlignTop
 
 
 class GiveMarkAndApprove : Fragment() {
-
+    private var mDB: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val uid:String = FirebaseAuth.getInstance().currentUser!!.uid;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +35,9 @@ class GiveMarkAndApprove : Fragment() {
         val view = inflater.inflate(R.layout.fragment_give_mark_and_approve, container, false)
         val mark = view.findViewById<EditText>(R.id.mark_et)
         val button = view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        val button2 = view.findViewById<Button>(R.id.button2)
-        val button3 = view.findViewById<Button>(R.id.button3)
-        val button4 = view.findViewById<Button>(R.id.button4)
+        val approve = view.findViewById<Button>(R.id.button2)
+        val resubmit = view.findViewById<Button>(R.id.button3)
+        val save = view.findViewById<Button>(R.id.button4)
 
         val balloon = createBalloon(requireContext()) {
             setArrowSize(10)
@@ -44,12 +48,12 @@ class GiveMarkAndApprove : Fragment() {
             setArrowAlignAnchorPadding(10)
             setAlpha(0.9f)
             setPadding(10)
-            setIsVisibleOverlay(true)
-            setOverlayColorResource(R.color.balloon_overlay)
-            setOverlayPadding(6f)
-            setOverlayPaddingColorResource(R.color.colorPrimary)
-            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
-            setDismissWhenOverlayClicked(false)
+//            setIsVisibleOverlay(true)
+//            setOverlayColorResource(R.color.balloon_overlay)
+//            setOverlayPadding(6f)
+//            setOverlayPaddingColorResource(R.color.colorPrimary)
+//            setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE)
+//            setDismissWhenOverlayClicked(false)
             setText("Laporan proposal (P01, C4(analisis)) : 5%  pengetahuan\n" +
                     "\n" +
                     "Perlu mempunyai elemen berikut:\n" +
@@ -68,7 +72,20 @@ class GiveMarkAndApprove : Fragment() {
         }
 
         button.setOnClickListener{
-            mark.showAlignTop(balloon)
+            button.showAlignTop(balloon)
+        }
+
+        approve.setOnClickListener {
+            val status = "Approve"
+            val update = mapOf(
+                "Status" to status
+            )
+
+            mDB.collection("Submission").document(uid)
+                .update(update)
+                .addOnCompleteListener {
+                    Toast.makeText(activity, "record added successfully", Toast.LENGTH_SHORT).show()
+                }
         }
         // Inflate the layout for this fragment
         return view

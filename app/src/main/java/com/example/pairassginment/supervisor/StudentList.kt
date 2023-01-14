@@ -43,16 +43,9 @@ class StudentList : Fragment(), StudentAdapter.OnItemClickListener {
 
     fun getItems() {
         itemsArray = ArrayList();
-        itemsArray.add(Student("Cham Zhao Siaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ppt", "thesis", "txt" ))
         itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Siaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
-        itemsArray.add(Student("Cham Zhao Si", "ppt", "thesis", "txt" ))
+        itemsArray.add(Student("Lee Wei Heng", "ppt", "thesis", "txt" ))
+
     }
 
     private fun replaceFragment(fragment: Fragment) {

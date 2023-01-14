@@ -44,30 +44,9 @@ class MarkList : Fragment(), MarkAdapter.OnItemClickListener {
     fun getItems() {
         itemsArray = ArrayList();
 
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
-        itemsArray.add(MarkClass("Chao Zhao .....", "10/60"))
+        itemsArray.add(MarkClass("Chao Zhao Si", "60/60"))
+        itemsArray.add(MarkClass("Lee Wei Heng", "10/60"))
+
 
     }
 

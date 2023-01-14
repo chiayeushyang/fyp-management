@@ -2,6 +2,7 @@ package com.example.pairassginment.coordinator
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,12 +10,14 @@ import com.example.pairassginment.R
 import com.example.pairassginment.coordinator.objectClass.StudentData
 import com.example.pairassginment.databinding.ActivityDashboardCoordinatorBinding
 import com.example.pairassginment.databinding.ActivityViewAllMarkBinding
+import com.google.firebase.firestore.FirebaseFirestore
 import com.skydoves.balloon.*
 import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 
 class ViewAllMark : AppCompatActivity() {
     private lateinit var binding: ActivityViewAllMarkBinding
     private var studentData: StudentData? = null
+    private var mDB: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,15 +40,43 @@ class ViewAllMark : AppCompatActivity() {
         val approve_btn = binding.approveBtn
         approve_btn.setOnClickListener {
             // send data to data base
-            val intentApprove = Intent(this, StudentList::class.java)
-            setResult(Activity.RESULT_OK, intentApprove)
-            finish()
+            updateDB()
         }
+    }
+
+    private fun updateDB(){
+        var status: String? = null
+
+        when(studentData!!.status){
+            "Pending" -> status = "Approved"
+            "Havent" -> status = "Approved"
+            "Approved" -> status = "Revised"
+            "Revised" -> status = "Approved"
+        }
+
+        mDB.collection("Mark")
+            .document(studentData!!.mark_id!!)
+            .update("Status", status)
+            .addOnSuccessListener {
+                val intentApprove = Intent(this, StudentList::class.java)
+                setResult(Activity.RESULT_OK, intentApprove)
+                finish()
+            }
     }
 
     private fun setUIReady(){
         binding.textView3.text = studentData!!.name.toString()
         binding.textView4.text = studentData!!.total_mark.toString()
+
+        when(studentData!!.status){
+            "Approved" -> binding.approveBtn.setText("REVISE")
+            "Havent" -> {
+                binding.approveBtn.setText("WAITING")
+                binding.approveBtn.isEnabled = false
+                binding.approveBtn.setBackgroundColor(Color.parseColor("#c2c2c0"))
+            }
+            else -> binding.approveBtn.setText("APPROVE")
+        }
 
         val button = binding.floatingActionButton17
         val button1 = binding.floatingActionButton
@@ -98,7 +129,12 @@ class ViewAllMark : AppCompatActivity() {
             button.showAlignBottom(ballon, 800)
         }
 
-        binding.markEt.setText(studentData!!.proposal!!.toString())
+        if(studentData!!.proposal != null){
+            binding.markEt.setText(studentData!!.proposal!!.toString())
+        }else{
+            binding.markEt.setText("Not Yet")
+        }
+
 
         val balloon1 = createBalloon(this) {
             setArrowSize(10)
@@ -134,8 +170,8 @@ class ViewAllMark : AppCompatActivity() {
             button1.showAlignBottom(balloon1)
         }
 
-        if(studentData!!.proposal != null){
-            binding.markEt1.setText(studentData!!.proposal!!.toString())
+        if(studentData!!.abstrak != null){
+            binding.markEt1.setText(studentData!!.abstrak!!.toString())
         }else{
             binding.markEt1.setText("Not Yet")
         }
@@ -180,8 +216,8 @@ class ViewAllMark : AppCompatActivity() {
 //        Log.d("student mark", studentData!!.toString())
 //        Log.d("student mark", studentData!!.abstrak!!.toString())
 
-        if(studentData!!.abstrak != null) {
-            binding.markEt2.setText(studentData!!.abstrak.toString())
+        if(studentData!!.pendahuluan != null) {
+            binding.markEt2.setText(studentData!!.pendahuluan.toString())
         }else{
             binding.markEt2.setText("Not Yet")
         }
@@ -225,8 +261,8 @@ class ViewAllMark : AppCompatActivity() {
             button3.showAlignTop(balloon3)
         }
 
-        if(studentData!!.pendahuluan != null) {
-            binding.markEt3.setText(studentData!!.pendahuluan.toString())
+        if(studentData!!.kajian_literature != null) {
+            binding.markEt3.setText(studentData!!.kajian_literature.toString())
         }else{
             binding.markEt3.setText("Not Yet")
         }
@@ -269,8 +305,8 @@ class ViewAllMark : AppCompatActivity() {
             button4.showAlignTop(balloon4)
         }
 
-        if(studentData!!.kajian_literature != null) {
-            binding.markEt4.setText(studentData!!.kajian_literature.toString())
+        if(studentData!!.metodologi != null) {
+            binding.markEt4.setText(studentData!!.metodologi.toString())
         }else{
             binding.markEt4.setText("Not Yet")
         }
@@ -313,8 +349,8 @@ class ViewAllMark : AppCompatActivity() {
             button5.showAlignTop(balloon5)
         }
 
-        if(studentData!!.metodologi != null) {
-            binding.markEt5.setText(studentData!!.metodologi.toString())
+        if(studentData!!.reka_bentuk_sistem != null) {
+            binding.markEt5.setText(studentData!!.reka_bentuk_sistem.toString())
         }else{
             binding.markEt5.setText("Not Yet")
         }
@@ -357,8 +393,8 @@ class ViewAllMark : AppCompatActivity() {
             button6.showAlignTop(balloon6)
         }
 
-        if(studentData!!.reka_bentuk_sistem != null) {
-            binding.markEt6.setText(studentData!!.reka_bentuk_sistem.toString())
+        if(studentData!!.perlaksanan != null) {
+            binding.markEt6.setText(studentData!!.perlaksanan.toString())
         }else{
             binding.markEt6.setText("Not Yet")
         }
@@ -401,8 +437,8 @@ class ViewAllMark : AppCompatActivity() {
             button7.showAlignTop(balloon7)
         }
 
-        if(studentData!!.perlaksanan != null) {
-            binding.markEt7.setText(studentData!!.perlaksanan.toString())
+        if(studentData!!.perbincangan != null) {
+            binding.markEt7.setText(studentData!!.perbincangan.toString())
         }else{
             binding.markEt7.setText("Not Yet")
         }
@@ -441,8 +477,8 @@ class ViewAllMark : AppCompatActivity() {
             button8.showAlignTop(balloon8)
         }
 
-        if(studentData!!.perbincangan != null) {
-            binding.markEt8.setText(studentData!!.perbincangan.toString())
+        if(studentData!!.kesimpulan_dan_cadangan != null) {
+            binding.markEt8.setText(studentData!!.kesimpulan_dan_cadangan.toString())
         }else{
             binding.markEt8.setText("Not Yet")
         }
@@ -479,8 +515,8 @@ class ViewAllMark : AppCompatActivity() {
             button9.showAlignTop(balloon9)
         }
 
-        if(studentData!!.kesimpulan_dan_cadangan != null) {
-            binding.markEt9.setText(studentData!!.kesimpulan_dan_cadangan.toString())
+        if(studentData!!.rujukan != null) {
+            binding.markEt9.setText(studentData!!.rujukan.toString())
         }else{
             binding.markEt9.setText("Not Yet")
         }
