@@ -39,23 +39,13 @@
 
 
         <TextView
-            android:id="@+id/mark_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:textSize="@dimen/date_text_size"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/itemTopicSubmitted" />
-
-        <TextView
             android:id="@+id/item_submitted_date_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:textSize="@dimen/date_text_size"
             app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/mark_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/itemTopicSubmitted" />
 
         <TextView
             android:id="@+id/item_approved_rejected_date_tv"
@@ -65,16 +55,6 @@
             android:textSize="@dimen/date_text_size"
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@id/item_submitted_date_tv" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mark : "
-            app:layout_constraintBottom_toBottomOf="@+id/mark_tv"
-            app:layout_constraintEnd_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="@+id/mark_tv"
-            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView7"
